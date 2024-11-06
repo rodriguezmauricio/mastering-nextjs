@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState, useEffect } from "react";
 import { fetchWithErrorHandling } from "../utils/fetchWithErrorHandling";
@@ -19,7 +20,7 @@ const PostFetcher = () => {
                     "https://jsonplaceholder.typicode.com/posts/1"
                 );
                 setPost(response);
-            } catch (error) {
+            } catch (error: any) {
                 setError(error.message);
             }
         };
