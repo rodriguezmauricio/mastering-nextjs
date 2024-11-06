@@ -1,0 +1,30 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Fonts and Colors */
+:root {
+    --primary-color: #0070f3;
+    --secondary-color: #ff4081;
+    --font-main: "Arial, sans-serif";
+}
+
+body {
+    font-family: var(--font-main);
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
