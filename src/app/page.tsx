@@ -1,14 +1,14 @@
 "use client";
 
 import styles from "./page.module.css";
-import EnvFetcher from "./components/EnvFetcher";
-import Button from "./components/Button";
-import Card from "./components/Card";
 import Login from "./components/Login";
-import Counter from "./components/Counter";
-import UserProfileFetcher from "./components/UserProfileFetcher";
-import PostFetcher from "./components/PostFetcher";
-import Dashboard from "../pages/page";
+// import EnvFetcher from "./components/EnvFetcher";
+// import Button from "./components/Button";
+// import Card from "./components/Card";
+// import Counter from "./components/Counter";
+// import UserProfileFetcher from "./components/UserProfileFetcher";
+// import PostFetcher from "./components/PostFetcher";
+// import Dashboard from "../pages/Dashboard";
 
 export default function Home() {
     return (
