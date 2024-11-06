@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id        String   @id @default(uuid())
+    name      String
+    email     String   @unique
+    password  String // Hashed password
+    role      Role
+    createdAt DateTime @default(now())
+
+    // Optional fields to track the creator
+    adminId  String? // ID of the admin who created this user or seller
+    sellerId String? // ID of the seller who created this user
+
+    // Relations
+    bets   Bet[]
+    admin  User? @relation("AdminCreated", fields: [adminId], references: [id])
+    seller User? @relation("SellerCreated", fields: [sellerId], references: [id])
+
+    // Back-relations
+    createdSellers User[] @relation("AdminCreated")
+    createdUsers   User[] @relation("SellerCreated")
+}
+
+enum Role {
+    ADMIN
+    SELLER
+    USER
+}

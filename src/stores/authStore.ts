@@ -9,12 +9,14 @@ type User = {
 
 type AuthState = {
     user: User | null;
+    loading: boolean;
     login: (userData: User) => void;
     logout: () => void;
 };
 
 export const useAuthStore = create<AuthState>((set: any) => ({
     user: null,
+    loading: true,
     login: (userData: User | null) => set({ user: userData }),
     logout: () => set({ user: null }),
 }));

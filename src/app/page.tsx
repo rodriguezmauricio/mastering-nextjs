@@ -8,21 +8,23 @@ import Login from "./components/Login";
 import Counter from "./components/Counter";
 import UserProfileFetcher from "./components/UserProfileFetcher";
 import PostFetcher from "./components/PostFetcher";
+import Dashboard from "../pages/page";
 
 export default function Home() {
     return (
         <div className={styles.page}>
             <main className={styles.main}>
                 {/* <EnvFetcher /> */}
-                {`${process.env.NEXT_PUBLIC_GREETING}`}
+                {/* {`${process.env.NEXT_PUBLIC_GREETING}`} */}
                 {/* <Card title="MAGIA DO MAL" content="salad salamaleico macancosappo" /> */}
                 <p></p>
-                {/* <Login /> */}
+                <Login />
                 {/* <Counter /> */}
                 <p></p>
                 {/* <Button onClick={() => console.log("clicado")} text="botao" secondary={false} /> */}
                 {/* <UserProfileFetcher /> */}
-                <PostFetcher />
+                {/* <PostFetcher /> */}
+                {/* <Dashboard /> */}
             </main>
         </div>
     );
